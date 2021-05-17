@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutterresuables/util/size_config.dart';
 
 class PageIndicator extends StatefulWidget {
 

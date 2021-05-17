@@ -2,7 +2,7 @@ import 'package:flutterresuables/util/size_config.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
-class XTextField extends StatelessWidget {
+class XTextFieldUnderline extends StatelessWidget {
   final TextEditingController controller;
   final String hintText;
   final FormFieldValidator<String> validator;
@@ -22,7 +22,7 @@ class XTextField extends StatelessWidget {
   final bool isEnabled;
   final double textSize;
 
-  XTextField(
+  XTextFieldUnderline(
       {@required this.controller,
       @required this.hintText,
       @required this.validator,
