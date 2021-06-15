@@ -47,10 +47,10 @@ class XTextFieldUnderline extends StatelessWidget {
     final sizeConfig = SizeConfig();
     final Color accentColor =  Theme.of(context).accentColor;
 
-    return Container(
+    return SizedBox(
         height: sizeConfig.sh(80),
+        width: SizeConfig.screenWidthDp,
         child: Stack(
-          fit: StackFit.loose,
           children: [
             TextFormField(
               enabled: isEnabled,
@@ -71,7 +71,7 @@ class XTextFieldUnderline extends StatelessWidget {
               decoration: !isCollapsed
                   ? InputDecoration(
 //        icon: prefixIcon,
-                      contentPadding: new EdgeInsets.only(
+                      contentPadding: EdgeInsets.only(
                           left: prefixIcon != null ? 50 : 20,
                           right: suffixIcon != null ? 50 : 20,
                           top: 15,
@@ -94,9 +94,7 @@ class XTextFieldUnderline extends StatelessWidget {
                                   : sizeConfig.sp(15),
                               fontWeight: FontWeight.bold),
                       filled: true,
-                      fillColor: fillColor != null
-                          ? fillColor
-                          :Theme.of(context).accentColor.withOpacity(0.2),
+                      fillColor: fillColor ?? Theme.of(context).accentColor.withOpacity(0.2),
                       border: UnderlineInputBorder(
                           borderRadius: BorderRadius.circular(0.0),
                           borderSide: BorderSide(
@@ -118,7 +116,7 @@ class XTextFieldUnderline extends StatelessWidget {
                       errorBorder: UnderlineInputBorder(
                           borderRadius: BorderRadius.circular(0.0),
                           borderSide:
-                              BorderSide(color: Colors.red, width: 2.0)),
+                              const BorderSide(color: Colors.red, width: 2.0)),
                     )
                   : InputDecoration.collapsed(
                       hintText: hintText,
@@ -130,9 +128,7 @@ class XTextFieldUnderline extends StatelessWidget {
                                 ),
                           color: hintTextColor ?? Colors.grey),
                       filled: true,
-                      fillColor: fillColor != null
-                          ? fillColor
-                          :Theme.of(context).accentColor.withOpacity(0.2),
+                      fillColor: fillColor ?? Theme.of(context).accentColor.withOpacity(0.2),
                     ),
             ),
             Align(

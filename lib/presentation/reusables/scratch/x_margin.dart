@@ -3,11 +3,9 @@ import 'package:flutter/material.dart';
 
 class XMargin extends StatelessWidget {
 
-
-
   final double width;
 
-  XMargin(this.width);
+  const XMargin(this.width);
 
   @override
   Widget build(BuildContext context) {

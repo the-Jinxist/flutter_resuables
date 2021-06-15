@@ -1,27 +1,29 @@
 import 'package:flutter/material.dart';
 import 'package:flutterresuables/util/size_config.dart';
+import 'package:page_view_indicator/page_view_indicator.dart';
 
 class PageIndicator extends StatefulWidget {
 
   final int length;
   final ValueNotifier<int> pageIndexNotifier;
 
-  PageIndicator(this.length, this.pageIndexNotifier);
+  const PageIndicator(this.length, this.pageIndexNotifier);
 
   @override
   _PageIndicatorState createState() => _PageIndicatorState();
 }
 
 class _PageIndicatorState extends State<PageIndicator> {
+
   @override
   Widget build(BuildContext context) {
     return PageViewIndicator(
-      indicatorPadding: EdgeInsets.all(0),
+      indicatorPadding: const EdgeInsets.all(0),
       pageIndexNotifier: widget.pageIndexNotifier,
       length: widget.length,
       normalBuilder: (animationController, index) => Container(
-        width: 10.0,
-        height: 10.0,
+        width: SizeConfig().sw(10).toDouble(),
+        height: SizeConfig().sh(10).toDouble(),
         decoration: BoxDecoration(
             color: Theme.of(context).accentColor,
             borderRadius: BorderRadius.circular(5.0)
@@ -33,8 +35,8 @@ class _PageIndicatorState extends State<PageIndicator> {
           curve: Curves.ease,
         ),
         child: Container(
-          width: SizeConfig().sw(20),
-          height: SizeConfig().sh(10),
+          width: SizeConfig().sw(20).toDouble(),
+          height: SizeConfig().sh(10).toDouble(),
           decoration: BoxDecoration(
               color: Theme.of(context).accentColor,
               borderRadius: BorderRadius.circular(5.0)

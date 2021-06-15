@@ -11,10 +11,10 @@ void navigateReplaceWithSlide(BuildContext context, Widget route, {bool isDialog
     Navigator.of(context).pushReplacement(PageRouteBuilder(
       pageBuilder: (context, animation, secondaryAnimation) => route,
       transitionsBuilder: (context, animation, secondaryAnimation, child) {
-        var begin = Offset(1.0, 0.0);
-        var end = Offset.zero;
-        var tween = Tween(begin: begin, end: end,);
-        var offsetAnimation = animation.drive(tween);
+        const begin = Offset(1.0, 0.0);
+        final end = Offset.zero;
+        final tween = Tween(begin: begin, end: end,);
+        final offsetAnimation = animation.drive(tween);
 
         return SlideTransition(
           position: offsetAnimation,
@@ -36,10 +36,10 @@ void navigateWithSlide(BuildContext context, Widget route, {bool isDialog = fals
       PageRouteBuilder(
         pageBuilder: (context, animation, secondaryAnimation) => route,
         transitionsBuilder: (context, animation, secondaryAnimation, child) {
-          var begin = Offset(1.0, 0.0);
-          var end = Offset.zero;
-          var tween = Tween(begin: begin, end: end);
-          var offsetAnimation = animation.drive(tween);
+          const begin = Offset(1.0, 0.0);
+          final end = Offset.zero;
+          final tween = Tween(begin: begin, end: end);
+          final offsetAnimation = animation.drive(tween);
 
           return SlideTransition(
             position: offsetAnimation,

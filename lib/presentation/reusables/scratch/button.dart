@@ -65,11 +65,10 @@ class XButton extends StatelessWidget {
               fontSize: textSize == null ? config.sp(16): config.sp(textSize),
             ): isLoading ?
             SizedBox(
-              child: CircularProgressIndicator(
-                strokeWidth: 4.0,
-                valueColor: progressColor != null ? AlwaysStoppedAnimation<Color>(progressColor): AlwaysStoppedAnimation<Color>(Colors.white),),
               height: config.sh(20),
               width: config.sh(20),
+              child: CircularProgressIndicator(
+                valueColor: progressColor != null ? AlwaysStoppedAnimation<Color>(progressColor): const AlwaysStoppedAnimation<Color>(Colors.white),),
             ) :
             NormalText(
               text: text,
