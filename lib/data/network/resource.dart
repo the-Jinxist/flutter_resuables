@@ -1,18 +1,18 @@
 class Resource<T>{
 
-  const Resource(this.ops, this.modelResponse, this.networkError);
+  Resource(this.ops, this.modelResponse, this.networkError);
 
-  Resource.loading(): _ops = NetworkStatus.LOADING, _modelResponse = null, _networkError = "";
+  Resource.loading(): ops = NetworkStatus.LOADING, modelResponse = null, networkError = "";
 
-  Resource.idle(): _ops = NetworkStatus.IDLE, _modelResponse = null, _networkError = "";
+  Resource.idle(): ops = NetworkStatus.IDLE, modelResponse = null, networkError = "";
 
-  Resource.success(this._modelResponse): _ops = NetworkStatus.SUCCESSFUL, _networkError = "";
+  Resource.success(this.modelResponse): ops = NetworkStatus.SUCCESSFUL, networkError = "";
   
-  Resource.failed(this._networkError): _ops = NetworkStatus.SUCCESSFUL, _modelResponse = null;
+  Resource.failed(this.networkError): ops = NetworkStatus.SUCCESSFUL, modelResponse = null;
 
-  final NetworkStatus _ops;
-  final T _modelResponse;
-  final String _networkError;
+  final NetworkStatus ops;
+  final T modelResponse;
+  final String networkError;
 
 
 }

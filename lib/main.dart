@@ -14,13 +14,13 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
 //        primarySwatch: Colors.white,
           primaryColor: Colors.white,
-          iconTheme: IconThemeData(
+          iconTheme: const IconThemeData(
               color: Colors.black,
               size: 24
           ),
           backgroundColor: Colors.white,
           accentColor: Colors.orange,
-          textTheme: TextTheme(
+          textTheme: const TextTheme(
             headline1: TextStyle(
               fontFamily: "Lato_Bold",
               fontSize: 35,
@@ -45,7 +45,7 @@ class MyApp extends StatelessWidget {
           ),
       ),
       home: Builder(builder: (BuildContext context){
-        Size size = MediaQuery.of(context).size;
+        final Size size = MediaQuery.of(context).size;
         SizeConfig.init(context, width: size.width, height: size.height, allowFontScaling: true);
 
         return MyHomePage(title: 'Flutter Demo Home Page');
