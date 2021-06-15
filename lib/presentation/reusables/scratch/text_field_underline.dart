@@ -96,7 +96,7 @@ class XTextFieldUnderline extends StatelessWidget {
                       filled: true,
                       fillColor: fillColor != null
                           ? fillColor
-                          :Colors.black,
+                          :Theme.of(context).accentColor.withOpacity(0.2),
                       border: UnderlineInputBorder(
                           borderRadius: BorderRadius.circular(0.0),
                           borderSide: BorderSide(
@@ -132,7 +132,7 @@ class XTextFieldUnderline extends StatelessWidget {
                       filled: true,
                       fillColor: fillColor != null
                           ? fillColor
-                          : accentColor,
+                          :Theme.of(context).accentColor.withOpacity(0.2),
                     ),
             ),
             Align(

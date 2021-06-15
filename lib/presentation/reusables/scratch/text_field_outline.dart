@@ -95,7 +95,7 @@ class XTextFieldOutline extends StatelessWidget {
                 filled: true,
                 fillColor: fillColor != null
                     ? fillColor
-                    :Colors.black,
+                    :Theme.of(context).accentColor.withOpacity(0.2),
                 border: OutlineInputBorder(
                     borderRadius: BorderRadius.circular(5.0),
                     borderSide: BorderSide(
@@ -131,7 +131,7 @@ class XTextFieldOutline extends StatelessWidget {
                 filled: true,
                 fillColor: fillColor != null
                     ? fillColor
-                    : accentColor,
+                    :Theme.of(context).accentColor.withOpacity(0.2),
               ),
             ),
             Align(
